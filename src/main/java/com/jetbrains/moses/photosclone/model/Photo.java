@@ -1,9 +1,13 @@
-package com.jetbrains.moses.photosclone;
+package com.jetbrains.moses.photosclone.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Photo {
 
     private String id;
     private String fileName;
+    private String contentType;
+    @JsonIgnore
     private byte[] data;
 
     public Photo() {
@@ -37,5 +41,13 @@ public class Photo {
 
     public void setData(byte[] data) {
         this.data = data;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 }
